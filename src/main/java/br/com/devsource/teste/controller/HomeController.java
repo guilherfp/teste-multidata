@@ -15,8 +15,4 @@ public class HomeController {
     return "redirect:users";
   }
 
-  @RequestMapping("/login")
-  public String loggin() {
-    return "login";
-  }
 }
