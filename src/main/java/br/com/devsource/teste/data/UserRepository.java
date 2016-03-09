@@ -24,8 +24,13 @@ public class UserRepository {
 
   private RowMapper<User> mapper = new UserMapper();
 
-  public List<User> allUsers() {
+  public List<User> listAll() {
     return template().query("select * from user", mapper);
+  }
+
+  public User withCredentials(String username, String password) {
+    String sql = "select * from user where username = ? and password = ?";
+    return template().queryForObject(sql, mapper, username, password);
   }
 
   private JdbcTemplate template() {

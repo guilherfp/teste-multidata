@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import br.com.devsource.teste.data.DataProvider;
+import br.com.devsource.teste.security.AuthToken;
 
 /**
  * @author Guilherme Pacheco
@@ -24,14 +25,16 @@ public class DataProviderTest {
 
   @Test
   public void testGeData1() throws Exception {
-    DataSource datasource = dataProvider.geData("empresa1", "filial1");
+    AuthToken token = new AuthToken("usuario", "senha", "empresa1", "filial1");
+    DataSource datasource = dataProvider.geData(token);
     long count = count(datasource);
     assertEquals(15, count);
   }
 
   @Test
   public void testGeData2() throws Exception {
-    DataSource datasource = dataProvider.geData("empresa2", "filial2");
+    AuthToken token = new AuthToken("usuario", "senha", "empresa2", "filial2");
+    DataSource datasource = dataProvider.geData(token);
     long count = count(datasource);
     assertEquals(25, count);
   }

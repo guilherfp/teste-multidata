@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
+import br.com.devsource.teste.model.Access;
+
 /**
  * @author Guilherme Pacheco
  */
@@ -37,8 +39,8 @@ public final class DataProvider {
     return builder.addScripts("schema2.sql").build();
   }
 
-  public DataSource geData(String empresa, String filial) {
-    return SOURCES.get(String.format("%s:%s", empresa, filial));
+  public DataSource geData(Access access) {
+    return SOURCES.get(String.format("%s:%s", access.getEmpresa(), access.getFilial()));
   }
 
 }

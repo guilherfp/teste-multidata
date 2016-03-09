@@ -20,7 +20,7 @@ public class SessionDatasSourcebuilder implements DataSourceBuilder {
   @Override
   public DataSource getDataSource() {
     AuthToken token = getAuthToken();
-    return dataProvider.geData(token.getEmpresa(), token.getFilial());
+    return dataProvider.geData(token);
   }
 
   private AuthToken getAuthToken() {

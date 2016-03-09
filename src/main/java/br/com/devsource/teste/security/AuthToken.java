@@ -2,10 +2,12 @@ package br.com.devsource.teste.security;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
+import br.com.devsource.teste.model.Access;
+
 /**
  * @author Guilherme Pacheco
  */
-public class AuthToken extends UsernamePasswordAuthenticationToken {
+public class AuthToken extends UsernamePasswordAuthenticationToken implements Access {
   private static final long serialVersionUID = 1L;
 
   private final String filial;
@@ -17,10 +19,12 @@ public class AuthToken extends UsernamePasswordAuthenticationToken {
     this.filial = filial;
   }
 
+  @Override
   public String getFilial() {
     return filial;
   }
 
+  @Override
   public String getEmpresa() {
     return empresa;
   }

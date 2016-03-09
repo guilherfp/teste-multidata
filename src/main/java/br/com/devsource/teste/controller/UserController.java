@@ -26,7 +26,7 @@ public class UserController {
 
   @RequestMapping({ "", "/" })
   public String users(Model model) {
-    List<User> allUsers = userRepository.allUsers();
+    List<User> allUsers = userRepository.listAll();
     LOGGER.info("Users: {}", allUsers);
     model.addAttribute("users", allUsers);
     return "users";
