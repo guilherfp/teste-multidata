@@ -5,6 +5,8 @@
 </head>
 <body onload='document.f.username.focus();'>
   <h3>Informe Usuário, Senha, Empresa e Filial</h3>
+  <div th:if="${param.error}">Invalid username and password.</div>
+  <div th:if="${param.logout}">You have been logged out.</div>
   <form th:action="@{/login}" method="post">
     <table>
       <tr>

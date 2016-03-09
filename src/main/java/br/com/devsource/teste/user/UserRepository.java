@@ -3,11 +3,13 @@ package br.com.devsource.teste.user;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import br.com.devsource.teste.data.DataSourceBuilder;
+import br.com.devsource.teste.security.Credentials;
 
 /**
  * @author Guilherme Pacheco
@@ -28,9 +30,13 @@ public class UserRepository {
     return template().query("select * from user", mapper);
   }
 
-  public User withCredentials(String username, String password) {
-    String sql = "select * from user where username = ? and password = ?";
-    return template().queryForObject(sql, mapper, username, password);
+  public User withCredentials(Credentials cred) {
+    try {
+      String sql = "select * from user where username = ? and password = ?";
+      return template().queryForObject(sql, mapper, cred.getUsername(), cred.getPassword());
+    } catch (EmptyResultDataAccessException ex) {
+      return null;
+    }
   }
 
   private JdbcTemplate template() {

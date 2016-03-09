@@ -2,7 +2,8 @@ create table user (
   id integer auto_increment primary key,
   username varchar(100),
   name varchar(100),
-  password varchar(30)
+  password varchar(30),
+  active boolean default true
 );
 
 insert into user (username, name, password) values ('user100', 'usuario 101', '101');
@@ -24,9 +25,9 @@ insert into user (username, name, password) values ('user116', 'Usuario 116', '1
 insert into user (username, name, password) values ('user117', 'Usuario 117', '117');
 insert into user (username, name, password) values ('user118', 'Usuario 118', '118');
 insert into user (username, name, password) values ('user119', 'Usuario 119', '119');
-insert into user (username, name, password) values ('user120', 'Usuario 120', '120');
-insert into user (username, name, password) values ('user121', 'Usuario 121', '121');
-insert into user (username, name, password) values ('user122', 'Usuario 122', '122');
-insert into user (username, name, password) values ('user123', 'Usuario 123', '123');
-insert into user (username, name, password) values ('user124', 'Usuario 124', '124');
-insert into user (username, name, password) values ('user125', 'Usuario 125', '125');
+insert into user (username, name, password, active) values ('user120', 'Usuario 120', '120', false);
+insert into user (username, name, password, active) values ('user121', 'Usuario 121', '121', false);
+insert into user (username, name, password, active) values ('user122', 'Usuario 122', '122', false);
+insert into user (username, name, password, active) values ('user123', 'Usuario 123', '123', false);
+insert into user (username, name, password, active) values ('user124', 'Usuario 124', '124', false);
+insert into user (username, name, password, active) values ('user125', 'Usuario 125', '125', false);

@@ -1,7 +1,6 @@
 package br.com.devsource.teste.user;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import java.util.List;
 
@@ -42,6 +41,22 @@ public class UserRepositoryTest {
     List<User> users = userRepository.listAll();
     assertNotNull(users);
     assertEquals(25, users.size());
+  }
+
+  @Test
+  public void testWithCredentials_InvalidCretentials() throws Exception {
+    AuthToken token = new AuthToken("usuario", "senha", "empresa2", "filial2");
+    userRepository = new UserRepository(() -> dataProvider.geData(token));
+    User user = userRepository.withCredentials(token);
+    assertNull(user);
+  }
+
+  @Test
+  public void testWithCredentials() throws Exception {
+    AuthToken token = new AuthToken("user120", "120", "empresa2", "filial2");
+    userRepository = new UserRepository(() -> dataProvider.geData(token));
+    User user = userRepository.withCredentials(token);
+    assertNotNull(user);
   }
 
 }
