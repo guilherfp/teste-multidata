@@ -2,7 +2,7 @@ package br.com.devsource.teste.security;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
-import br.com.devsource.teste.model.Access;
+import br.com.devsource.teste.data.Access;
 
 /**
  * @author Guilherme Pacheco

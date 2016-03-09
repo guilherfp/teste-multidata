@@ -1,4 +1,4 @@
-package br.com.devsource.teste.data;
+package br.com.devsource.teste.user;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -8,8 +8,10 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.devsource.teste.model.User;
+import br.com.devsource.teste.data.DataProvider;
 import br.com.devsource.teste.security.AuthToken;
+import br.com.devsource.teste.user.User;
+import br.com.devsource.teste.user.UserRepository;
 
 /**
  * @author Guilherme Pacheco

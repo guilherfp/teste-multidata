@@ -10,8 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-import br.com.devsource.teste.model.Access;
-
 /**
  * @author Guilherme Pacheco
  */

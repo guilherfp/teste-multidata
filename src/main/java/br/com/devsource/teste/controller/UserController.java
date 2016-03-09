@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.devsource.teste.data.UserRepository;
-import br.com.devsource.teste.model.User;
+import br.com.devsource.teste.user.User;
+import br.com.devsource.teste.user.UserRepository;
 
 /**
  * @author Guilherme Pacheco

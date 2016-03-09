@@ -1,4 +1,4 @@
-package br.com.devsource.teste.model;
+package br.com.devsource.teste.user;
 
 /**
  * @author Guilherme Pacheco

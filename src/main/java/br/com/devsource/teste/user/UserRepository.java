@@ -1,4 +1,4 @@
-package br.com.devsource.teste.data;
+package br.com.devsource.teste.user;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import br.com.devsource.teste.model.User;
+import br.com.devsource.teste.data.DataSourceBuilder;
 
 /**
  * @author Guilherme Pacheco

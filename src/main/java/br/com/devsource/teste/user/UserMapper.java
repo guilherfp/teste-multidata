@@ -1,11 +1,9 @@
-package br.com.devsource.teste.data;
+package br.com.devsource.teste.user;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
-
-import br.com.devsource.teste.model.User;
 
 /**
  * @author Guilherme Pacheco
