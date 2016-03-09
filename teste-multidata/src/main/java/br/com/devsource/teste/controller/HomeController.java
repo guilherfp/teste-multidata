@@ -1,7 +1,6 @@
 package br.com.devsource.teste.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -11,8 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class HomeController {
 
+  @RequestMapping("")
+  public String users() {
+    return "redirect:users";
+  }
+
   @RequestMapping("/login")
-  public String loggin(Model model) {
+  public String loggin() {
     return "login";
   }
 }

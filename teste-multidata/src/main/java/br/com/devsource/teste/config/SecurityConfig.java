@@ -37,6 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Init
       .and()
       .formLogin()
       .loginPage("/login")
+      .defaultSuccessUrl("/users", true)
       .permitAll()
       .and()
       .logout().permitAll();
