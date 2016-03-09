@@ -10,7 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 /**
  * @author Guilherme Pacheco
  */
-public final class SecurityUtils {
+final class SecurityUtils {
 
   private static final String ANONYMOUS = "ROLE_ANONYMOUS";
 

@@ -12,7 +12,7 @@ import br.com.devsource.teste.security.AuthToken;
  * @author Guilherme Pacheco
  */
 @Component
-public class SessionDatasSourcebuilder implements DataSourceBuilder {
+public final class SessionDatasSourcebuilder implements DataSourceBuilder {
 
   @Autowired
   private DataProvider dataProvider;
