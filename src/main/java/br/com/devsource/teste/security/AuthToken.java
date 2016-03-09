@@ -6,13 +6,13 @@ import java.util.List;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import br.com.devsource.teste.data.Access;
+import br.com.devsource.teste.data.AccessPoint;
 import br.com.devsource.teste.user.User;
 
 /**
  * @author Guilherme Pacheco
  */
-public class AuthToken extends UsernamePasswordAuthenticationToken implements Access, Credentials {
+public class AuthToken extends UsernamePasswordAuthenticationToken implements AccessPoint, Credentials {
   private static final long serialVersionUID = 1L;
 
   private final String filial;
@@ -24,10 +24,10 @@ public class AuthToken extends UsernamePasswordAuthenticationToken implements Ac
     this.filial = filial;
   }
 
-  public AuthToken(Access access, User user) {
+  public AuthToken(AccessPoint accessPoint, User user) {
     super(user.getUsername(), user.getPassword(), authorities());
-    empresa = access.getEmpresa();
-    filial = access.getFilial();
+    empresa = accessPoint.getEmpresa();
+    filial = accessPoint.getFilial();
   }
 
   private static List<SimpleGrantedAuthority> authorities() {

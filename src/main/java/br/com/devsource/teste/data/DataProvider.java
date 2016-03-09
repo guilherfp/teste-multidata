@@ -41,8 +41,8 @@ public final class DataProvider {
     return SOURCES.values();
   }
 
-  public DataSource geData(Access access) {
-    return SOURCES.get(String.format("%s:%s", access.getEmpresa(), access.getFilial()));
+  public DataSource geData(AccessPoint accessPoint) {
+    return SOURCES.get(String.format("%s:%s", accessPoint.getEmpresa(), accessPoint.getFilial()));
   }
 
 }

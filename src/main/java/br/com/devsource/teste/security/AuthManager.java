@@ -11,7 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
-import br.com.devsource.teste.data.Access;
+import br.com.devsource.teste.data.AccessPoint;
 import br.com.devsource.teste.data.DataProvider;
 import br.com.devsource.teste.data.DataSourceBuilder;
 import br.com.devsource.teste.user.User;
@@ -36,8 +36,8 @@ public class AuthManager implements AuthenticationProvider, AuthenticationManage
     return newToken(token, user);
   }
 
-  private Authentication newToken(Access access, User user) {
-    AuthToken token = new AuthToken(access, user);
+  private Authentication newToken(AccessPoint accessPoint, User user) {
+    AuthToken token = new AuthToken(accessPoint, user);
     LOGGER.info("New licensed user: {}", user);
     return token;
   }
