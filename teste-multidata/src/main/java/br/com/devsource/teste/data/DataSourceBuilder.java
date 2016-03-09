@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 /**
  * @author Guilherme Pacheco
  */
+@FunctionalInterface
 public interface DataSourceBuilder {
 
   DataSource getDataSource();

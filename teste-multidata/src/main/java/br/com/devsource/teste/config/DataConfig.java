@@ -12,7 +12,7 @@ import br.com.devsource.teste.data.DataProvider;
 public class DataConfig {
 
   @Bean
-  private DataProvider dataProvider() {
+  public DataProvider dataProvider() {
     return new DataProvider();
   }
 
