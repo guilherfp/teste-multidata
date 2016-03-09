@@ -25,6 +25,7 @@ public class AuthFilter extends UsernamePasswordAuthenticationFilter {
     String password = password(req);
 
     AuthToken token = new AuthToken(username, password, empresa, filial);
+
     setDetails(req, token);
     return token;
   }
