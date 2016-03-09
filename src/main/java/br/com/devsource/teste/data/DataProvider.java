@@ -1,8 +1,8 @@
 package br.com.devsource.teste.data;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.sql.DataSource;
 
 import org.slf4j.Logger;
@@ -35,6 +35,10 @@ public final class DataProvider {
     EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
     builder.setName("db2").setType(EmbeddedDatabaseType.H2);
     return builder.addScripts("schema2.sql").build();
+  }
+
+  public Collection<DataSource> getDataSources() {
+    return SOURCES.values();
   }
 
   public DataSource geData(Access access) {
