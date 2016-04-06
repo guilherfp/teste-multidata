@@ -12,13 +12,13 @@ import br.com.devsource.teste.security.AuthToken;
  * @author Guilherme Pacheco
  */
 @Component
-public final class SessionDatasSourcebuilder implements DataSourceBuilder {
+public final class SessionDatasSourceHelper implements DataSourceHelper {
 
   @Autowired
   private DataProvider dataProvider;
 
   @Override
-  public DataSource getDataSource() {
+  public DataSource get() {
     AuthToken token = getAuthToken();
     return dataProvider.geData(token);
   }

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.devsource.teste.data.AccessPoint;
 import br.com.devsource.teste.data.DataProvider;
-import br.com.devsource.teste.data.DataSourceBuilder;
+import br.com.devsource.teste.data.DataSourceHelper;
 import br.com.devsource.teste.user.User;
 import br.com.devsource.teste.user.UserRepository;
 
@@ -43,13 +43,12 @@ public class AuthManager implements AuthenticationProvider, AuthenticationManage
   }
 
   private User user(AuthToken token) {
-    DataSourceBuilder dataSourceBuilder = datasourceBuilder(token);
+    DataSourceHelper dataSourceBuilder = datasourceBuilder(token);
     UserRepository userRepository = new UserRepository(dataSourceBuilder);
-    User user = userRepository.withCredentials(token);
-    return user;
+    return userRepository.withCredentials(token);
   }
 
-  private DataSourceBuilder datasourceBuilder(AuthToken token) {
+  private DataSourceHelper datasourceBuilder(AuthToken token) {
     DataSource dataSource = dataProvider.geData(token);
     SecurityUtils.notNull(dataSource, "Empresa e/ou filial inválidos");
     return () -> dataSource;

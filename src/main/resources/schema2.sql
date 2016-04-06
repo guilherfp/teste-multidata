@@ -6,7 +6,7 @@ create table user (
   active boolean default true
 );
 
-insert into user (username, name, password) values ('user100', 'usuario 101', '101');
+insert into user (username, name, password) values ('user101', 'usuario 101', '101');
 insert into user (username, name, password) values ('user102', 'usuario 102', '102');
 insert into user (username, name, password) values ('user103', 'usuario 103', '103');
 insert into user (username, name, password) values ('user104', 'usuario 104', '104');

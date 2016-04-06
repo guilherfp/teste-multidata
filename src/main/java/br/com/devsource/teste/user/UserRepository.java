@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import br.com.devsource.teste.data.DataSourceBuilder;
+import br.com.devsource.teste.data.DataSourceHelper;
 import br.com.devsource.teste.security.Credentials;
 
 /**
@@ -17,10 +17,10 @@ import br.com.devsource.teste.security.Credentials;
 @Repository
 public class UserRepository {
 
-  private DataSourceBuilder dataSourceBuilder;
+  private DataSourceHelper dataSourceBuilder;
 
   @Autowired
-  public UserRepository(DataSourceBuilder dataSourceBuilder) {
+  public UserRepository(DataSourceHelper dataSourceBuilder) {
     this.dataSourceBuilder = dataSourceBuilder;
   }
 
@@ -40,7 +40,7 @@ public class UserRepository {
   }
 
   private JdbcTemplate template() {
-    return new JdbcTemplate(dataSourceBuilder.getDataSource());
+    return new JdbcTemplate(dataSourceBuilder.get());
   }
 
 }

@@ -1,9 +1,11 @@
 package br.com.devsource.teste.user;
 
+import br.com.devsource.teste.security.Credentials;
+
 /**
  * @author Guilherme Pacheco
  */
-public class User {
+public class User implements Credentials {
 
   private String username;
   private String name;
@@ -14,6 +16,7 @@ public class User {
     active = true;
   }
 
+  @Override
   public String getUsername() {
     return username;
   }
@@ -30,6 +33,7 @@ public class User {
     this.name = name;
   }
 
+  @Override
   public String getPassword() {
     return password;
   }
