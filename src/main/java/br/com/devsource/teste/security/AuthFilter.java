@@ -27,7 +27,7 @@ public class AuthFilter extends UsernamePasswordAuthenticationFilter {
     AuthToken token = new AuthToken(username, password, empresa, filial);
 
     setDetails(req, token);
-    return token;
+    return getAuthenticationManager().authenticate(token);
   }
 
   private String empresa(HttpServletRequest request) {
